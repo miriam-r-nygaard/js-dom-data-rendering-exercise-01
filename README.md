@@ -193,7 +193,9 @@ moviesContainer.innerHTML += `
 `;
 ```
 
+
 Erstat placeholder teksten foroven med data fra JS-datastruktur f.eks. så kan `titel` erstattes med f.eks. `${movie.title}` osv.
+
 ---
 
 ### Opgave 9 – Tilføj billede og link
@@ -209,14 +211,14 @@ Hver film skal også vise:
 
 Du skal benytte nedenstående HTML-struktur med `figure` og `figcaption`.
 
+Erstat alle de steder i HTML-strukturen for oven hvor der står noget med **placeholder**  med data fra JS-datastruktur f.eks placeholder-url bliver til `${movie.url}`
+
 ```HTML
 <figure>
   <a href="placeholder-url" target="_blank" rel="noopener noreferrer"><img src="placeholder-img" alt="placeholder-titel"></a>
   <figcaption>placehlder-titel</figcaption>
 </figure>
 ```
-
-Erstat alle de steder i HTML-strukturen for oven hvor der står noget med **placeholder**  med data fra JS-datastruktur f.eks placeholder-url bliver til `${movie.url}`
 ---
 
 ### Opgave 10 – Kald funktionen med filmdata
