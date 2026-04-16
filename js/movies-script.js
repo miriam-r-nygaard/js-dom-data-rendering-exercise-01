@@ -1,10 +1,11 @@
 "use strict";
 //Opgave 2: skriv "use strict";
 
+//Opgave 3: Her er et langt array med de første fem film
 const movies = [
   {
     id: 1,
-    titel: "Inception",
+    title: "Inception",
     genre: "science-fiction",
     year: "2010",
     duration: "2.28",
@@ -13,7 +14,7 @@ const movies = [
   },
   {
     id: 2,
-    titel: "The Dark Night",
+    title: "The Dark Night",
     genre: "action",
     year: "2008",
     duration: "2.32",
@@ -22,7 +23,7 @@ const movies = [
   },
   {
     id: 3,
-    titel: "Forrest Gump",
+    title: "Forrest Gump",
     genre: "drama",
     year: "1994",
     duration: "2.22",
@@ -31,7 +32,7 @@ const movies = [
   },
   {
     id: 4,
-    titel: "Superbad",
+    title: "Superbad",
     genre: "comedy",
     year: "2007",
     duration: "1.53",
@@ -40,7 +41,7 @@ const movies = [
   },
   {
     id: 5,
-    titel: "It",
+    title: "It",
     genre: "horror",
     year: "2017",
     duration: "2.15",
@@ -48,3 +49,23 @@ const movies = [
     url: "https://www.imdb.com/title/tt1396484/",
   },
 ];
+
+//Opgave 4: Opret en konstant variabel med navnet - moviesContainer, Variablen skal pege på elementet med id - movies-container, Hint: Brug document.querySelector().
+
+const moviesContainer = document.querySelector("#movies-container");
+
+//opgave 5: Opret funktionen displayMovies(movieList)
+function displayMovies(movieList) {
+  moviesContainer.innerHTML += "";
+  movies.forEach((item) => {
+    moviesContainer.innerHTML += `
+   <article>
+   <h2>${item.title}</h2>
+   <h3>${item.genre}</h3>
+   <p>${item.year}</p>
+   </article>
+   `;
+  });
+}
+
+displayMovies(movies);
