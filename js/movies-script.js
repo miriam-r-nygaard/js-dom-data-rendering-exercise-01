@@ -112,7 +112,7 @@ function displayMovies(movieList) {
          <li><p>${item.duration}</p></li>
       </ul>
       <figure>
-         <a href="${item.url}" target="_blank" rel="bb"><img width="50" src="${item.img}" alt="${item.title}"></a>
+         <a href="${item.url}" target="_blank" rel="bb"><img src="${item.img}" alt="${item.title}"></a>
          <figcaption>${item.title}</figcaption>
       </figure>   
    </article>
@@ -126,12 +126,10 @@ function displayMovies(movieList) {
 
 // opgave 8: Brug innerHTML og template literals
 
-//opgave 10: Kald funktionen med filmdata
+//opgave 19: Kald funktionen med filmdata
 
 displayMovies(movies);
 
-//Opgave 11: Tilføj billede og link
+//Opgave 10: Tilføj billede og link
 
-//opgave 12: Tilføj de næste 5 film fra movies.txt title
-
-//
+//opgave 11: Tilføj de næste 5 film fra movies.txt title
