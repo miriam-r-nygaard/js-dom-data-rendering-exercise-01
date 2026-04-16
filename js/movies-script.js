@@ -90,7 +90,7 @@ const movies = [
     genre: "drama",
     year: "1994",
     duration: "2.34",
-    img: "img/the-matrix.webp",
+    img: "img/pulp-fiction.webp",
     url: "https://www.imdb.com/title/tt0133093/",
   },
 ];
@@ -107,7 +107,7 @@ function displayMovies(movieList) {
    <article>
       <h2>${item.title}</h2>
       <ul>
-         <li><h3>${item.genre}</h3></li>
+         <li><p>${item.genre}</p></li>
          <li><p>${item.year}</p></li>
          <li><p>${item.duration}</p></li>
       </ul>
