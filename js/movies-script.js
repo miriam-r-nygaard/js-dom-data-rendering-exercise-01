@@ -48,6 +48,51 @@ const movies = [
     img: "img/it.webp",
     url: "https://www.imdb.com/title/tt1396484/",
   },
+  {
+    id: 6,
+    title: "The Hangover",
+    genre: "comedy",
+    year: "2009",
+    duration: "1.40",
+    img: "img/the-hangover.webp",
+    url: "https://www.imdb.com/title/tt1119646/",
+  },
+  {
+    id: 7,
+    title: "The Conjuring",
+    genre: "horror",
+    year: "2013",
+    duration: "1.52",
+    img: "img/the-conjuring.webp",
+    url: "https://www.imdb.com/title/tt1457767/",
+  },
+  {
+    id: 8,
+    title: "Interstellar",
+    genre: "science-fiction",
+    year: "2014",
+    duration: "2.55",
+    img: "img/interstellar.jpg",
+    url: "https://www.imdb.com/title/tt0816692/",
+  },
+  {
+    id: 9,
+    title: "The Matrix",
+    genre: "science-fiction",
+    year: "1999",
+    duration: "3.02",
+    img: "img/the-matrix.webp",
+    url: "https://www.imdb.com/title/tt0133093/",
+  },
+  {
+    id: 10,
+    title: "Pulp Fiction",
+    genre: "drama",
+    year: "1994",
+    duration: "2.34",
+    img: "img/the-matrix.webp",
+    url: "https://www.imdb.com/title/tt0133093/",
+  },
 ];
 
 //Opgave 4: Opret en konstant variabel med navnet - moviesContainer, Variablen skal pege på elementet med id - movies-container, Hint: Brug document.querySelector().
@@ -60,12 +105,33 @@ function displayMovies(movieList) {
   movies.forEach((item) => {
     moviesContainer.innerHTML += `
    <article>
-   <h2>${item.title}</h2>
-   <h3>${item.genre}</h3>
-   <p>${item.year}</p>
+      <h2>${item.title}</h2>
+      <ul>
+         <li><h3>${item.genre}</h3></li>
+         <li><p>${item.year}</p></li>
+         <li><p>${item.duration}</p></li>
+      </ul>
+      <figure>
+         <a href="${item.url}" target="_blank" rel="bb"><img width="50" src="${item.img}" alt="${item.title}"></a>
+         <figcaption>${item.title}</figcaption>
+      </figure>   
    </article>
    `;
   });
 }
 
+//opgave 6:Tøm containeren før filmene vises , Inde i funktionen displayMovies(movieList) skal du sætte variablen moviesContainer til en tom tekst-streng ved at bruge innerHTML
+
+// opgave 7:Brug forEach() til at gennemløbe filmene
+
+// opgave 8: Brug innerHTML og template literals
+
+//opgave 10: Kald funktionen med filmdata
+
 displayMovies(movies);
+
+//Opgave 11: Tilføj billede og link
+
+//opgave 12: Tilføj de næste 5 film fra movies.txt title
+
+//
