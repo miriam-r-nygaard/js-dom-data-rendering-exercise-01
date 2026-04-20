@@ -99,8 +99,9 @@ const movies = [
 
 const moviesContainer = document.querySelector("#movies-container");
 
+//gamle kode
 //opgave 5: Opret funktionen displayMovies(movieList)
-function displayMovies(movieList) {
+/* function displayMovies(movieList) {
   moviesContainer.innerHTML += "";
   movies.forEach((item) => {
     moviesContainer.innerHTML += `
@@ -119,7 +120,7 @@ function displayMovies(movieList) {
    `;
   });
 }
-
+*/
 //opgave 6:Tøm containeren før filmene vises , Inde i funktionen displayMovies(movieList) skal du sætte variablen moviesContainer til en tom tekst-streng ved at bruge innerHTML
 
 // opgave 7:Brug forEach() til at gennemløbe filmene
@@ -128,8 +129,34 @@ function displayMovies(movieList) {
 
 //opgave 19: Kald funktionen med filmdata
 
-displayMovies(movies);
-
 //Opgave 10: Tilføj billede og link
 
 //opgave 11: Tilføj de næste 5 film fra movies.txt title
+
+// DEL 2
+/*  Opgave 6 Brug map() til at gennemløbe filmene */
+
+function displayMovies(movieList) {
+  const html = movieList
+    .map((item) => {
+      return `
+       <article>
+          <h2>${item.title}</h2>
+          <ul>
+            <li><p>${item.genre}</p></li>
+            <li><p>${item.year}</p></li>
+            <li><p>${item.duration}</p></li>
+          </ul>
+          <figure>
+         <a href="${item.url}" target="_blank" rel="bb"><img src="${item.img}" alt="${item.title}"></a>
+         <figcaption>${item.title}</figcaption>
+      </figure>   
+   </article>
+   `;
+    })
+    .join("");
+
+  moviesContainer.innerHTML = html;
+}
+
+displayMovies(movies);
