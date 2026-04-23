@@ -98,7 +98,10 @@ const movies = [
 //Opgave 4: Opret en konstant variabel med navnet - moviesContainer, Variablen skal pege på elementet med id - movies-container, Hint: Brug document.querySelector().
 
 const moviesContainer = document.querySelector("#movies-container");
-
+//henter de HTML- elementer, vi skal vi arbejde med
+const selectedCategory = document.querySelector("#category-select");
+const searchInput = document.querySelector("#gsearch");
+const form = document.querySelector("form");
 //gamle kode
 //opgave 5: Opret funktionen displayMovies(movieList)
 /* function displayMovies(movieList) {
@@ -160,3 +163,32 @@ function displayMovies(movieList) {
 }
 
 displayMovies(movies);
+
+function filterMovies() {
+  //henter den valgte kategori fra dropdown
+  const selectedValue = selectedCategory.value;
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  //starter med alle film
+  let filteredMovies = movies;
+
+  if (searchTerm !== "") {
+    filteredMovies = filteredMovies.filter((movie) => {
+      return movie.title.toLowerCase().includes(searchTerm);
+    });
+  }
+
+  if (selectedValue !== "all") {
+    filteredMovies = filteredMovies.filter((movie) => {
+      return movie.genre === selectedValue;
+    });
+  }
+  displayMovies(filteredMovies);
+}
+
+searchInput.addEventListener("input", filterMovies);
+selectedCategory.addEventListener("change", filterMovies);
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  filterMovies();
+});
