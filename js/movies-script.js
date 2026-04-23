@@ -100,7 +100,7 @@ const movies = [
 const moviesContainer = document.querySelector("#movies-container");
 //henter de HTML- elementer, vi skal vi arbejde med
 const selectedCategory = document.querySelector("#category-select");
-const searchInput = document.querySelector("#gsearch");
+const searchInput = document.querySelector("#g-search");
 const form = document.querySelector("form");
 //gamle kode
 //opgave 5: Opret funktionen displayMovies(movieList)
